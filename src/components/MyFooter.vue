@@ -1,0 +1,15 @@
+<template>
+    <footer>
+        alakazam
+    </footer>
+</template>
+
+<script>
+export default {
+    name: 'MyFooter'
+}
+</script>
+
+<style scoped lang="scss">
+
+</style>

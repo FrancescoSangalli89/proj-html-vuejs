@@ -8,9 +8,9 @@
 
 <script>
 
-import MyHeader from './components/MyHeader.vue';
-import MyMain from './components/MyMain.vue';
-import MyFooter from './components/MyFooter.vue';
+import MyHeader from './components/header/MyHeader.vue';
+import MyMain from './components/main/MyMain.vue';
+import MyFooter from './components/footer/MyFooter.vue';
 
 export default {
   name: 'App',

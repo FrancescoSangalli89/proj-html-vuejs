@@ -1,6 +1,6 @@
 <template>
-    <div class="jumbotron">
-        <div class="item-container container">
+    <section class="jumbotron">
+        <div class="item-container container d-flex">
             <div class="title">
                 <h2>CONFERENCE ON</h2>
                 <h1>SOCIAL NETWORKS</h1>
@@ -8,9 +8,11 @@
             <div class="subTitle">
                 <p>23-26 MAY 2019   /   SAN FRANCISCO   /   8 SPEAKERS</p>
             </div>
-            <button class="header-button">REGISTER ONLINE</button>
+            <a href="#">
+                <button class="header-button">REGISTER ONLINE</button>
+            </a>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -21,16 +23,15 @@ export default {
 
 <style lang="scss">
 
-    @import '../assets/styles/vars.scss';
+    @import '../../assets/styles/vars.scss';
 
     .jumbotron {
-        background-image: url('../assets/images/slider-1-bg.jpg');
+        background-image: url('../../assets/images/slider-1-bg.jpg');
         height: 600px;
         color: #fff;
         text-align: center;
         .item-container {
             height: 100%;
-            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -49,11 +50,11 @@ export default {
             .header-button {
                 margin-top: 3rem;
                 padding: 1rem;
-                color: #fff;
                 background-color: $primary-color;
                 border: none;
                 border-radius: 5px;
                 font-weight: 700;
+                color: #fff;
             }
         }
     }

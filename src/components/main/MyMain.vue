@@ -5,6 +5,7 @@
         <MySpeaker />
         <MyProgram />
         <MyMaps />
+        <MyLocation />
     </main>
 </template>
 
@@ -15,6 +16,7 @@
     import MySpeaker from '../main/MySpeaker.vue';
     import MyProgram from '../main/MyProgram.vue';
     import MyMaps from '../main/MyMaps.vue';
+    import MyLocation from '../main/MyLocation.vue';
 
 export default {
     name: 'MyMain',
@@ -23,7 +25,8 @@ export default {
         MyUpdates,
         MySpeaker,
         MyProgram,
-        MyMaps
+        MyMaps,
+        MyLocation
         
     }
 }

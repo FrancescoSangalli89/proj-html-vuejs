@@ -12,7 +12,7 @@
         </div>
         <div class="programBtm">
             <div class="programHeader d-flex">
-                <div v-for="(day, index) in days" :key="index" class="programDay" :class="day.active?'active':''" @click="selectDay(index)">
+                <div v-for="(day, index) in days" :key="index" class="programDay" :class="(activeDay==index)?'active':''" @click="selectDay(index)">
                     <h4>DAY {{day.number}}</h4>
                     <div>{{day.date}} May 2023</div>
                 </div>
@@ -47,10 +47,11 @@ export default {
     name: 'MyProgram',
     data() {
         return {
+            activeDay: 0,
             days: [
                 {
                     number: 1,
-                    active: true,
+                    active: false,
                     date: 23
                 },
                 {
@@ -79,10 +80,7 @@ export default {
     },
     methods: {
         selectDay(position) {
-            if (this.day(position).active == false) {
-                this.day(position).active = true;
-            }
-            
+            this.activeDay = position;
         }
     }
 }
@@ -117,7 +115,7 @@ export default {
                     background-color: $primary-color;
                     border-right: 0.2px solid #333;
                     cursor: pointer;
-                    &:hover, &:active {
+                    &:hover, &.active {
                         background-color: $primary-color-hover;
                     }
                     h4 {

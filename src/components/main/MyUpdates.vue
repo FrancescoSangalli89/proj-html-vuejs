@@ -2,9 +2,21 @@
     <section class="updates">
         <div class="container">
             <div class="timeCards d-flex">
-                <div v-for="(timeCard, index) in timeCards" :key="index" class="timeCard d-flex">
-                    <div class="numbers">{{timeCard.numbers}}</div>
-                    <div class="timeUnit">{{timeCard.unit}}</div>
+                <div class="timeCard d-flex">
+                    <div class="numbers">{{days}}</div>
+                    <div class="timeUnit">DAYS</div>
+                </div>
+                <div class="timeCard d-flex">
+                    <div class="numbers">{{hours}}</div>
+                    <div class="timeUnit">HOURS</div>
+                </div>
+                <div class="timeCard d-flex">
+                    <div class="numbers">{{mins}}</div>
+                    <div class="timeUnit">MINS</div>
+                </div>
+                <div class="timeCard d-flex">
+                    <div class="numbers">{{secs}}</div>
+                    <div class="timeUnit">SECS</div>
                 </div>
             </div>
             <h3>SUBSCRIBE FOR UPDATES</h3>
@@ -41,9 +53,9 @@ export default {
             ],
             countdown: '',
             secs: 60,
-            mins: 60,
-            hours: 24,
-            days: 365
+            mins: 59,
+            hours: 23,
+            days: 364
         }
     },
     watch: {
@@ -52,19 +64,20 @@ export default {
                 if (value > 0) {
                     setTimeout(() => {
                         this.secs--;
-                        console.log(this.secs)
                     }, 1000);
                 } else {
                     this.secs = 60;
                 }
                 if (value == 0) {
                     this.mins--;
-                    console.log(this.mins)
                 }
                 if (this.mins == 0) {
-                    this.mins = 60;
+                    this.mins = 59;
                     this.hours--;
-                    console.log(this.hours)
+                }
+                if (this.hours == 0) {
+                    this.hours = 23;
+                    this.days--;
                 }
             },
             immediate: true

@@ -9,6 +9,7 @@
         <MyNews />
         <MyTickets />
         <MyPresentation />
+        <MySponsors />
     </main>
 </template>
 
@@ -23,6 +24,7 @@
     import MyNews from '../main/MyNews.vue';
     import MyTickets from '../main/MyTickets.vue';
     import MyPresentation from '../main/MyPresentation.vue';
+    import MySponsors from '../main/MySponsors.vue';
 
 export default {
     name: 'MyMain',
@@ -35,7 +37,8 @@ export default {
         MyLocation,
         MyNews,
         MyTickets,
-        MyPresentation
+        MyPresentation,
+        MySponsors
         
     }
 }

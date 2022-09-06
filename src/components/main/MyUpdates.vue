@@ -35,12 +35,41 @@ export default {
                     unit: 'MINS'
                 },
                 {
-                    numbers: '7',
+                    numbers: this.secs,
                     unit: 'SECS'
                 }
-            ]
+            ],
+            countdown: '',
+            secs: 60,
+            mins: 60,
+            hours: 24,
+            days: 365
         }
-    }
+    },
+    watch: {
+        secs: {
+            handler(value) {
+                if (value > 0) {
+                    setTimeout(() => {
+                        this.secs--;
+                        console.log(this.secs)
+                    }, 1000);
+                } else {
+                    this.secs = 60;
+                }
+                if (value == 0) {
+                    this.mins--;
+                    console.log(this.mins)
+                }
+                if (this.mins == 0) {
+                    this.mins = 60;
+                    this.hours--;
+                    console.log(this.hours)
+                }
+            },
+            immediate: true
+        }
+    },
 }
 </script>
 

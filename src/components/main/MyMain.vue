@@ -6,6 +6,8 @@
         <MyProgram />
         <MyMaps />
         <MyLocation />
+        <MyNews />
+        <MyTickets />
     </main>
 </template>
 
@@ -17,6 +19,8 @@
     import MyProgram from '../main/MyProgram.vue';
     import MyMaps from '../main/MyMaps.vue';
     import MyLocation from '../main/MyLocation.vue';
+    import MyNews from '../main/MyNews.vue';
+    import MyTickets from '../main/MyTickets.vue';
 
 export default {
     name: 'MyMain',
@@ -26,7 +30,9 @@ export default {
         MySpeaker,
         MyProgram,
         MyMaps,
-        MyLocation
+        MyLocation,
+        MyNews,
+        MyTickets
         
     }
 }

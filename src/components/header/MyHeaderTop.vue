@@ -6,7 +6,7 @@
         <div class="headerMenuContainer d-flex">
             <ul class="linksList d-flex">
                 <li v-for="(link, index) in links" :key="index" class="listItem">
-                        <a :href="link.url">{{link.text}}</a>
+                        <a @click="selectMenu(index)" :class="(activeMenu==index)?'active':''" :href="link.url">{{link.text}}</a>
                 </li>
             </ul>
             <div class="search">
@@ -21,6 +21,7 @@ export default {
     name: 'MyHeaderTop',
     data() {
         return {
+            activeMenu: 0,
             links: [
                 {
                     text: 'HOME',
@@ -64,6 +65,11 @@ export default {
                 }
             ]
         }
+    },
+    methods: {
+        selectMenu(position) {
+            this.activeMenu = position;
+        }
     }
 }
 </script>
@@ -82,7 +88,7 @@ export default {
                         color: $text-color;
                         padding-bottom: 0.8rem;
                         
-                        &:hover {
+                        &:hover, &.active {
                             color: $primary-color;
                             border-bottom: 2px solid $primary-color;
                         }

@@ -55,6 +55,7 @@ export default {
                 border-radius: 5px;
                 font-weight: 700;
                 color: #fff;
+                cursor: pointer;
             }
         }
     }

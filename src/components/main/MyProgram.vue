@@ -4,7 +4,7 @@
             <div class="d-flex">
                 <h2>PROGRAM</h2>
                 <div>
-                    <p>This conference run through all 4 days from 23 - 26 May 20016.</p>
+                    <p>This conference run through all 4 days from 23 - 26 May 2023.</p>
                     <p>We also provide free lunch and coffee break in each day.</p>
                 </div>
             </div>
@@ -18,10 +18,11 @@
                 </div>
             </div>
             <div class="programContainer d-flex">
+
                 <div class="programLeft">
                     <div>
                         <i class="fa-regular fa-clock"></i>
-                        <span>09:00 - 10.30</span>
+                        <span>{{programs[activeDay].hours}}</span>
                     </div>
                     <div>
                         <i class="fa-solid fa-location-arrow"></i>
@@ -29,14 +30,15 @@
                     </div>
                     <div>
                         <i class="fa-solid fa-user"></i>
-                        <span>JANET JONES</span>
+                        <span class="name">{{programs[activeDay].name}}</span>
                     </div>
                 </div>
                 <div class="programRight">
-                    <h3>WELCOMING AND INTRODUCTION</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias libero ipsa cupiditate quod nesciunt explicabo voluptatibus molestiae, itaque esse est.</p>
-                    <img src="../../assets/images/speaker-5.jpg" alt="">
+                    <h3>{{programs[activeDay].title}}</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias libero ipsa cupiditate quod nesciunt explicabo voluptatibus molestiae, itaque esse est...</p>
+                    <img :src="programs[activeDay].url" :alt="programs[activeDay].name">
                 </div>
+
             </div>
         </div>
     </section>
@@ -51,30 +53,56 @@ export default {
             days: [
                 {
                     number: 1,
-                    active: false,
                     date: 23
                 },
                 {
                     number: 1,
-                    active: false,
                     date: 23
                 },
                 {
                     number: 2,
-                    active: false,
                     date: 24
                 },
                 {
                     number: 3,
-                    active: false,
                     date: 25
                 },
                 {
                     number: 4,
-                    active: false,
                     date: 26
                 },
-
+            ],
+            programs: [
+                {
+                    hours: '9.30 - 10.30',
+                    name: 'JANET JONES',
+                    title: 'WELCOMING AND INTRODUCTION',
+                    url: require('../../assets/images/speaker-5.jpg')
+                },
+                {
+                    hours: '10.30 - 12.30',
+                    name: 'PATRICK SPENCER',
+                    title: 'PINCO PANCO',
+                    url: require('../../assets/images/speaker-6.jpg')
+                },
+                {
+                    hours: '9.30 - 12.30',
+                    name: 'MICHAEL DOVER',
+                    title: 'PANCO PINCO',
+                    url: require('../../assets/images/speaker-4.jpg')
+                },
+                {
+                    hours: '9.30 - 12.30',
+                    name: 'ANGELINA HOLY',
+                    title: 'LA TAUROMACHIA',
+                    url: require('../../assets/images/speaker-3.jpg')
+                },
+                {
+                    hours: '9.30 - 14.30',
+                    name: 'CHARLIE BROWN',
+                    title: 'THIS IS THE END',
+                    url: require('../../assets/images/speaker-2.jpg')
+                }
             ]
         }
     },
@@ -133,6 +161,9 @@ export default {
                         margin: 20px 0;
                         i {
                             margin-right: 10px;
+                        }
+                        .name {
+                            color: $primary-color;
                         }
                     }
                 }

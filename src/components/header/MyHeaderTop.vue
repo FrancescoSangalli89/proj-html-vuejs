@@ -17,6 +17,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'MyHeaderTop',
     data() {
@@ -87,7 +88,6 @@ export default {
                     a {
                         color: $text-color;
                         padding-bottom: 0.8rem;
-                        
                         &:hover, &.active {
                             color: $primary-color;
                             border-bottom: 2px solid $primary-color;

@@ -1,0 +1,15 @@
+@import './vars.scss';
+
+h5 {
+    color: #fff;
+    margin-bottom: 35px;
+}
+
+p {
+    color: $section-background;
+    margin-bottom: 30px;
+}
+
+.component {
+    width: calc(100% / 4 - 10px);
+}

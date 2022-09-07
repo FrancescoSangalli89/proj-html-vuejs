@@ -33,24 +33,6 @@ export default {
     name: 'MyUpdates',
     data() {
         return {
-            timeCards: [
-                {
-                    numbers: '365',
-                    unit: 'DAYS'
-                },
-                {
-                    numbers: '17',
-                    unit: 'HOURS'
-                },
-                {
-                    numbers: '28',
-                    unit: 'MINS'
-                },
-                {
-                    numbers: this.secs,
-                    unit: 'SECS'
-                }
-            ],
             countdown: '',
             secs: 60,
             mins: 59,
@@ -61,12 +43,12 @@ export default {
     watch: {
         secs: {
             handler(value) {
-                if (value > 0) {
+                if (value >= 0) {
                     setTimeout(() => {
                         this.secs--;
                     }, 1000);
                 } else {
-                    this.secs = 60;
+                    this.secs = 59;
                 }
                 if (value == 0) {
                     this.mins--;

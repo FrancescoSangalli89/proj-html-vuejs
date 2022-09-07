@@ -1,12 +1,19 @@
 <template>
     <footer>
-        alakazam
+        <MyFooterTop />
+        <MyFooterBtm />
     </footer>
 </template>
 
 <script>
+    import MyFooterTop from './MyFooterTop.vue';
+    import MyFooterBtm from './MyFooterBtm.vue';
 export default {
-    name: 'MyFooter'
+    name: 'MyFooter',
+    components: {
+        MyFooterTop,
+        MyFooterBtm
+    }
 }
 </script>
 

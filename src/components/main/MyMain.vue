@@ -15,16 +15,16 @@
 
 <script>
 
-    import MyAboutUs from '../main/MyAboutUs.vue';
-    import MyUpdates from '../main/MyUpdates.vue';
-    import MySpeaker from '../main/MySpeaker.vue';
-    import MyProgram from '../main/MyProgram.vue';
-    import MyMaps from '../main/MyMaps.vue';
-    import MyLocation from '../main/MyLocation.vue';
-    import MyNews from '../main/MyNews.vue';
-    import MyTickets from '../main/MyTickets.vue';
-    import MyPresentation from '../main/MyPresentation.vue';
-    import MySponsors from '../main/MySponsors.vue';
+    import MyAboutUs from './MyAboutUs.vue';
+    import MyUpdates from './MyUpdates.vue';
+    import MySpeaker from './MySpeaker.vue';
+    import MyProgram from './MyProgram.vue';
+    import MyMaps from './MyMaps.vue';
+    import MyLocation from './MyLocation.vue';
+    import MyNews from './MyNews.vue';
+    import MyTickets from './MyTickets.vue';
+    import MyPresentation from './MyPresentation.vue';
+    import MySponsors from './MySponsors.vue';
 
 export default {
     name: 'MyMain',

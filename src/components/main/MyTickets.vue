@@ -3,31 +3,21 @@
         <div class="container">
             <h2>TICKETS</h2>
             <div class="tickets d-flex">
-                <a v-for="(ticket, index) in tickets" :key="index" href="#" class="ticket">
-                    <div class="ticketHeader">
-                        <h4>{{ticket.title}}</h4>
-                        <div>{{ticket.price}}</div>
-                        <div class="trapezoid" :class="ticket.featured?'stickyOn':'stickyOff'">Featured!</div>
-                    </div>
-                    <div class="ticketMain">
-                        <div>{{ticket.daysAcces}} Day Access</div>
-                        <div>Coffee Break</div>
-                        <div>Lunch(International Buffet)</div>
-                        <div>Documents Sheets</div>
-                        <div>{{ticket.discount}}USD Voucher For Next Event</div>
-                    </div>
-                    <div class="ticketFooter">
-                        BOOK NOW
-                    </div>
-                </a>
+                <MySingleTicket v-for="(ticket, index) in tickets" :key="index" :ticket="ticket"/>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+
+    import MySingleTicket from './MySingleTicket.vue';
+
 export default {
     name: 'MyTickets',
+    components: {
+        MySingleTicket
+    },
     data() {
         return {
             tickets: [
@@ -70,48 +60,6 @@ export default {
         }
         .tickets {
             justify-content: space-between;
-            .ticket {
-                width: calc(100% / 3 - 20px);
-                .ticketHeader {
-                    background-color: $section-background;
-                    padding: 20px;
-                    position: relative;
-                    h4 {
-                        color: #000;
-                    }
-                    div {
-                        margin-top: 10px;
-                        color: $primary-color;
-                    }
-                    .trapezoid {
-                        line-height: 30px;
-                        color: #fff;
-                        position: absolute;
-                        width: 80px;
-                        height: 30px;
-                        background: red;
-                        transform: perspective(20px) rotateX(27deg);
-                        rotate: 45deg;
-                        margin: 50px;
-                        top: -37px;
-                        right: -62px;
-                    }
-                }
-                .ticketMain {
-                    background-color: #fff;
-                    padding: 20px 40px;
-                    div {
-                        margin: 20px 0;
-                        color: $text-color;
-                        font-style: italic;
-                    }
-                }
-                .ticketFooter {
-                    background-color: $primary-color;
-                    color: #fff;
-                    padding: 20px;
-                }
-            }
         }
     }
 </style>

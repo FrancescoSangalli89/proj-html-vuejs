@@ -4,7 +4,7 @@
             <h2>SPONSORS</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, odio.</p>
             <div class="sponsorLogos d-flex">
-                <img v-for="(sponsor, index) in sponsors" :key="index" :src="sponsor.url" alt="sponsor logo">
+                <img v-for="(sponsor, index) in sponsors" :key="index" :src="sponsor" alt="sponsor logo">
             </div>
         </div>
     </section>
@@ -16,24 +16,12 @@ export default {
     data() {
         return {
             sponsors: [
-                {
-                    url: require('../../assets/images/banner-1.jpg')
-                },
-                {
-                    url: require('../../assets/images/banner-2.jpg')
-                },
-                {
-                    url: require('../../assets/images/banner-3.jpg')
-                },
-                {
-                    url: require('../../assets/images/banner-4.jpg')
-                },
-                {
-                    url: require('../../assets/images/banner-5.jpg')
-                },
-                {
-                    url: require('../../assets/images/banner-6.jpg')
-                }
+                require('../../assets/images/banner-1.jpg'),
+                require('../../assets/images/banner-2.jpg'),
+                require('../../assets/images/banner-3.jpg'),
+                require('../../assets/images/banner-4.jpg'),
+                require('../../assets/images/banner-5.jpg'),
+                require('../../assets/images/banner-6.jpg')
             ]
         }
     }
